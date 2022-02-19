@@ -19,5 +19,4 @@ int main()
     else
     cout << "R1 bilshe R2" << endl;
   
-
 }

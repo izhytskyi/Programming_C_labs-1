@@ -3,7 +3,8 @@
 
 using namespace std;
 
-int main() {
+int main() 
+{
 
 	double num1,num2,result,sa,sg;
 	cout << "Enter num1" << endl;
