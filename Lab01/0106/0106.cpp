@@ -5,7 +5,6 @@ using namespace std;
 
 int main() 
 {
-
 	double num1,num2,result,sa,sg;
 	cout << "Enter num1" << endl;
 	cin >> num1;
@@ -15,5 +14,5 @@ int main()
 	sa = (pow(num1, 2) + pow(num2, 2)) / 2;
 	result = sg + sa;
 	cout << "Answer = " << result << endl;
-
+	return 0;
 }
