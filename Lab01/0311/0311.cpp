@@ -18,5 +18,5 @@ int main()
     cout << "vonu rivni" << endl;
     else
     cout << "R1 bilshe R2" << endl;
-  
+    return 0;
 }
