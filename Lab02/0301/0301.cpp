@@ -5,8 +5,7 @@ using namespace std;
 
 int main()
 {
-	double a, f,x,y;
-	cout << "Enter a" << endl;
-	cin >> a;
+	/*НЕ Розумію шо тут робити*/
+
 	
 }
