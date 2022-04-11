@@ -5,12 +5,17 @@ using namespace std;
 
 int main()
 {
-  float n, i,a, s = 1;
-  cout << "Enter a" << endl;
-  cin >> a;
-  cout << "Enter n" << endl;
-  cin >> n; 
-  for (i = 1; i <= n; i++)
-  s = s * (a + i);
-  cout << "Result = " << s << endl;
+	int n, a, s = 1;
+	cout << "Enter n = ";
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		
+		cout << "Enter a" << i + 1 << "= ";
+		cin >> a;
+	}                      
+	for (int j = 1; j <= n; j++) {
+		s = s * (a + j);
+	}
+  cout << "Result = " << s;
+  return 0;
 }
