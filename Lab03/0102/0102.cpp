@@ -17,5 +17,4 @@ int main() {
 	else
 		cout << "b = " << *pb / 2;
 	
-	
 }

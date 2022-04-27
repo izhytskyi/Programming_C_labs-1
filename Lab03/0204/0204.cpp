@@ -13,3 +13,4 @@ int main() {
 	*py = tan(*px) + (5 * pow(*px, 3)) - (4 * pow(*px, 2));
 	cout << "y = " << * py;
 }
+

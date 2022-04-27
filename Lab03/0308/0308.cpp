@@ -27,5 +27,4 @@
             cout << "Result a = " << a << endl;
 
         }
-
 }
