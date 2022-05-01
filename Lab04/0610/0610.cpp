@@ -6,19 +6,17 @@ int main()
 {
     setlocale(LC_ALL, "ukr");
 
-    int NxM[10][10], i, j,m,n;
+    int NxM[10][10], i, j,m,n,sum=0;
     cout << "Введіть кількість рядків і стовпців:" << endl;
     cout << "Кількість рядків = ";
-    cin >> m;
-    cout << "Кількість стовпців = ";
     cin >> n;
+    cout << "Кількість стовпців = ";
+    cin >> m;
     srand((unsigned)time(NULL));
-    for (i = 0; i < m; i++) {
-        for (j = 0; j < n; j++) {
-            if(NxM[i]!=0)
-            NxM[i][j] = 10 * rand() / RAND_MAX;
-        }
-
+    for (j = 0; j < m; j++) {
+        for (i = 0; i < n; i++) {
+            NxM[j][i] = 2 * rand() / RAND_MAX; 
+        }    
     }
     cout << "Матриця : " << endl;
     for (i = 0; i < m; i++)
@@ -26,7 +24,15 @@ int main()
         for (j = 0; j < n; j++)
             cout << setw(5) << NxM[i][j];
         cout << endl;
+      
     }
-    if (NxM[i][j] == 0)"Не зупиняється";
-        
+    int sum_i = 0, sum_j = 0;
+    for (int i = 0; i < m; i++)
+        for (int j = 0; j < n; j++)
+         sum =   (NxM[i][j] + NxM[sum_i][sum_j]);
+    if(sum>1)
+        sum_i = i; 
+
+    cout << NxM[i][j] << sum_i;
+    
 }

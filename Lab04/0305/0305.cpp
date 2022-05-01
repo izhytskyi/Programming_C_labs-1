@@ -6,8 +6,7 @@ using namespace std;
 int main()
 {
 
-    int n, k,r=0;
-    k = 0;
+    int n, k, r = 0;
     cout << "Rozmir Array = ";
     cin >> n;
     double* a = new double[n];
@@ -16,21 +15,25 @@ int main()
         cout << "Enter a" << i + 1 << " = ";
         cin >> a[i];
     }
+    bool flag = true;
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
         {
-            if (a[i] != a[j] && i == j)
+            if (a[i] == a[j])
             {
-                ++k;
+                a[j]++;
+                    flag = false;
+                break;
             }
         }
-            if (r != k)
-            
-                ++r;
-            
-        
+        if (flag)
+            a[r] = a[i];
+            ++r;
+        for (int i = 0; i < n; i++) {
+            if (a[i] > 1)
+                cout << a[i],r;
+        }
+
     }
-         
-    cout << r;
 }
