@@ -6,45 +6,45 @@ int main()
 {
     setlocale(LC_ALL, "ukr");
 
-    int A, B, i, j;
+    int m, n, i, j;
     cout << "Введіть кількість рядків і стовпців:" << endl;
         cout << "Кількість рядків = ";
-        cin >> A;
+        cin >> m;
         cout << "Кількість стовпців = ";
-        cin >> B;
+        cin >> n;
 
-    int** a = new int* [A];
+    int** B = new int* [m];
     cout << "Введіть елементи матриці :" << endl;
-    for (i = 0; i < A; i++)
+    for (i = 0; i < m; i++)
     {
-        a[i] = new int[B];
-        for (j = 0; j < B; j++)
+        B[i] = new int[n];
+        for (j = 0; j < n; j++)
         {
-            cout << "a[" << i + 1 << "][" << j + 1 << "] = ";
-            cin >> a[i][j];
+            cout << "B[" << i + 1 << "][" << j + 1 << "] = ";
+            cin >> B[i][j];
         }
         cout << endl;
     }
 
     cout << "Матриця : " << endl;
-    for (i = 0; i < A; i++)
+    for (i = 0; i < m; i++)
     {
-        for (j = 0; j < B; j++)
-            cout << setw(5) << a[i][j];
+        for (j = 0; j < n; j++)
+            cout << setw(5) << B[i][j];
         cout << endl;
     }
 
-    for (j = 0; j < B; j++)
+    for (j = 0; j < n; j++)
     {
         int min;
-        for (i = 0; i < A; i++)
+        for (i = 0; i < m; i++)
         {
-            if (i == 0 || min > a[i][j])
-                min = a[i][j];
+            if (i == 0 || min > B[i][j])
+                min = B[i][j];
         }
         cout   << "Cj" << j+1 <<" = "<< min << endl;
     }
-    for (i = 0; i < A; i++)
-        delete[] a[i];
-    delete[] a;
+    for (i = 0; i < n; i++)
+        delete[] B[i];
+    delete[] B;
 }

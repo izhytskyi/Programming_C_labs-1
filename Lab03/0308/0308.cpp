@@ -13,7 +13,7 @@
         int* ptra = &a;
         int* ptrb = &b;
 
-        if (a > b) {
+        if (a < b) {
 
             a = *ptra + 12;
             cout << "Result a = " << a << endl;
