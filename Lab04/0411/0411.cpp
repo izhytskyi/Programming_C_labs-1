@@ -1,20 +1,46 @@
-// 0411.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <iomanip>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	setlocale(LC_ALL, "ukr");
+
+	int i, j, nom = 0, m, n;
+	cout << "Введіть кількість рядків і стовпців:" << endl;
+	cout << "Кількість рядків = ";
+	cin >> m;
+	cout << "Кількість стовпців = ";
+	cin >> n;
+
+	int** B = new int* [m];
+	cout << "Введіть елементи матриці :" << endl;
+	for (i = 0; i < m; i++)
+	{
+		B[i] = new int[n];
+		for (j = 0; j < n; j++)
+		{
+			cout << "B[" << i + 1 << "][" << j + 1 << "] = ";
+			cin >> B[i][j];
+		}
+		cout << endl;
+	}
+	cout << "Матриця : " << endl;
+	for (i = 0; i < m; i++)
+	{
+		for (j = 0; j < n; j++)
+			cout  << setw(5) << B[i][j];
+		cout << endl;
+	}
+	int max_i = 0, max_j = 0;
+	for (int i = 0; i < m; i++)
+		for (int j = 0; j < n; j++)
+			if (B[i][j] > B[max_i][max_j])
+			{
+				max_i = i; max_j = j; 
+			}
+	
+	cout << "Максимальний елемент = " << B[max_i][max_j] << ", його номер = " << max_i+1 << endl;
+
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
