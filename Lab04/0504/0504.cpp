@@ -42,7 +42,7 @@ int main()
             if (i == 0 || min > B[i][j])
                 min = B[i][j];
         }
-        cout   << "Cj" << j+1 <<" = "<< min << endl;
+        cout   << "Cj" << j+1 <<" j= "<< min << endl;
     }
     for (i = 0; i < n; i++)
         delete[] B[i];

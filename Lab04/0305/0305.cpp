@@ -5,8 +5,8 @@ using namespace std;
 
 int main()
 {
-
-    int n, k, r = 0;
+    setlocale(LC_ALL, "ukr");
+    int n, r = 0;
     cout << "Rozmir Array = ";
     cin >> n;
     double* a = new double[n];
@@ -15,25 +15,12 @@ int main()
         cout << "Enter a" << i + 1 << " = ";
         cin >> a[i];
     }
-    bool flag = true;
     for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < n; j++)
-        {
-            if (a[i] == a[j])
+            if (a[i] == a[i+1])
             {
-                a[j]++;
-                    flag = false;
-                break;
+                r ++;
             }
-        }
-        if (flag)
-            a[r] = a[i];
-            ++r;
-        for (int i = 0; i < n; i++) {
-            if (a[i] > 1)
-                cout << a[i],r;
-        }
-
     }
+    cout << "Кількість членів, що входить у послідовність більше одного разу = " << r;
 }

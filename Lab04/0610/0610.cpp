@@ -6,33 +6,38 @@ int main()
 {
     setlocale(LC_ALL, "ukr");
 
-    int NxM[10][10], i, j,m,n,sum=0;
+    int NxM[10][10], i, j, m, n, sum;
     cout << "Введіть кількість рядків і стовпців:" << endl;
-    cout << "Кількість рядків = ";
+    cout << "Кількість стовпців =";
     cin >> n;
-    cout << "Кількість стовпців = ";
+    cout << "Кількість рядків = ";
     cin >> m;
     srand((unsigned)time(NULL));
     for (j = 0; j < m; j++) {
         for (i = 0; i < n; i++) {
-            NxM[j][i] = 2 * rand() / RAND_MAX; 
-        }    
+            NxM[i][j] = 2 * rand() / RAND_MAX;
+        }
     }
     cout << "Матриця : " << endl;
-    for (i = 0; i < m; i++)
+    for (j = 0; j < m; j++)
     {
-        for (j = 0; j < n; j++)
+        for (i = 0; i < n; i++)
             cout << setw(5) << NxM[i][j];
         cout << endl;
-      
-    }
-    int sum_i = 0, sum_j = 0;
-    for (int i = 0; i < m; i++)
-        for (int j = 0; j < n; j++)
-         sum =   (NxM[i][j] + NxM[sum_i][sum_j]);
-    if(sum>1)
-        sum_i = i; 
 
-    cout << NxM[i][j] << sum_i;
-    
+    }
+    for (int i = 0; i < n; i++)
+    {
+        sum = 0;
+        for (int j = 0; j < m; j++)
+        {
+            sum += NxM[i][j];
+        }
+        if (sum > 1)
+        {
+            cout << "На зупинці j" << i + 1 << " зустрілися автобуси " << sum << ";" << endl;
+        }
+        else
+            cout << "На зупинці j" << i + 1 << " не зустрілися автобуси" << endl;
+    }
 }
