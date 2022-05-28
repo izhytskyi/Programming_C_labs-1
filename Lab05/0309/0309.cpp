@@ -10,7 +10,6 @@ int main() {
     int d = 1;
     int max = 0;
     int num = 0;
-    int max1 = 0;
     cout << "Enter string: "; 
     getline(cin, str); 
     for (unsigned int i = 0; i <= str.length(); i++) {
@@ -21,7 +20,6 @@ int main() {
               
             }
         }
-        
         else {
             if (num > 0&& max<num)
             {
@@ -30,7 +28,5 @@ int main() {
             num = 0;
         }
     }
-   
     cout << "Max = " << max << endl; 
-
 }
